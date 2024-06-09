@@ -8,7 +8,7 @@ function App() {
 
   async function registerUser(event) {
     event.preventDefault(); // Prevent the default form submission
-    const res = await fetch('http://localhost:5000/register', {
+    const res = await fetch('http://localhost:5000/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
