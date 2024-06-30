@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState } from 'react';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name,
         email,
         password,
       }),
