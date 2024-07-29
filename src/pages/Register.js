@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 function App() {
+    const history = useHistory()  
+    
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,8 +20,11 @@ function App() {
         password,
       }),
     });
-    const data = await res.json();
-    console.log(data);
+    const data = await response.jsom()
+
+    if(data.status === 'ok'){
+      history.push('/login')   
+    }
   }
 
   return (
