@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
-    const history = useHistory()  
+    const history = useNavigate()  
     
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -9,7 +10,7 @@ function App() {
 
   async function registerUser(event) {
     event.preventDefault(); // Prevent the default form submission
-    const res = await fetch('http://localhost:5000/api/register', {
+    const response = await fetch('http://localhost:5000/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +21,7 @@ function App() {
         password,
       }),
     });
-    const data = await response.jsom()
+    const data = await response.json()
 
     if(data.status === 'ok'){
       history.push('/login')   
