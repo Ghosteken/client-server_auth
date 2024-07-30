@@ -1,10 +1,10 @@
 import React from "react"
 import jwt from 'jsonwebtoken'
-import { useHistory } from 'react-router-dom'
-import { set } from "mongoose"
+import { useNavigate } from 'react-router-dom'
+import { useState,useEffect } from "react"
 
 const Dashboard = () => {
-    const history = useHistory()
+    const history = useNavigate()
     const [quote, setQuote] = useState('')
     const [tempQuote, setTempQuote] = useState('')
 
